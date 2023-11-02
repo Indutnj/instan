@@ -1,7 +1,7 @@
 import axios from "axios";
 import {message} from 'antd';
-//const url='https://instagram-6ytg.onrender.com';
-const url='http://localhost:5000';
+const url='https://instagram-6ytg.onrender.com';
+//const url='http://localhost:5000';
 export const addPost =(values)=>async dispatch=>{
 
     values.user = JSON.parse(localStorage.getItem('user'))._id
