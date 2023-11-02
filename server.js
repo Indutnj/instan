@@ -6,8 +6,8 @@ const usersRoute = require("./routes/usersRoute")
 const postsRoute = require("./routes/postsRoute")
 app.use(express.json({limit : '25mb'}))
 app.use(cors({
-  //https://profound-medovik-b95ea9.netlify.app
-    origin: 'http://localhost:3000', // Allow requests from your local frontend
+ // https://profound-medovik-b95ea9.netlify.app
+    origin: ' https://profound-medovik-b95ea9.netlify.app', // Allow requests from your local frontend
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     //allowedHeaders: 'Content-Type,Authorization',
   }));
