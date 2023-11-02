@@ -1,6 +1,6 @@
 import axios from "axios";
 import {message} from 'antd';
-const url='https://instagram2-v5v5.onrender.com/';
+const url='https://instagram2-v5v5.onrender.com';
 //const url='http://localhost:5000';
 export const addPost =(values)=>async dispatch=>{
 
