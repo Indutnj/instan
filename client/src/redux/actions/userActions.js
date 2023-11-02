@@ -8,7 +8,7 @@ export const userRegister =(values)=>async dispatch=>{
     dispatch({type:'LOADING' , payload:true})
 
     try {
-        await axios.post(`${url}/api/users/register` , values)
+        await axios.post(`${url}/api/users/register` , values, { headers: {"Access-Control-Allow-Origin":  "*"}})
         dispatch({type:'LOADING' , payload:false})
         message.success('User registered successfully')
         window.location.href='/login'
