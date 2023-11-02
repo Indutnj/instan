@@ -8,7 +8,7 @@ export const userRegister =(values)=>async dispatch=>{
     dispatch({type:'LOADING' , payload:true})
 
     try {
-        await axios.post(`${url}/api/users/register` , values, { headers: {"Access-Control-Allow-Origin":  "*"}})
+        await axios.post(`${url}api/users/register` , values, { headers: {"Access-Control-Allow-Origin":  "*"}})
         dispatch({type:'LOADING' , payload:false})
         message.success('User registered successfully')
         window.location.href='/login'
@@ -25,7 +25,7 @@ export const userLogin =(values)=>async dispatch=>{
     dispatch({type:'LOADING' , payload:true})
 
     try {
-        const response = await axios.post(`${url}/api/users/login` , values, { headers: {"Access-Control-Allow-Origin":  "*"}})
+        const response = await axios.post(`${url}api/users/login` , values, { headers: {"Access-Control-Allow-Origin":  "*"}})
         dispatch({type:'LOADING' , payload:false})
         message.success('Login success')
         localStorage.setItem('user' , JSON.stringify(response.data))
@@ -42,7 +42,7 @@ export const getAllUsers = (values) =>async dispatch=>{
     dispatch({type:'LOADING' , payload:true})
 
     try {
-        const response = await axios.get(`${url}/api/users/getallusers`, { headers: {"Access-Control-Allow-Origin":  "*"}})
+        const response = await axios.get(`${url}api/users/getallusers`, { headers: {"Access-Control-Allow-Origin":  "*"}})
         dispatch({type:'LOADING' , payload:false})
         dispatch({type:'GET_ALL_USERS' , payload:response.data})
         
@@ -92,7 +92,7 @@ export const editUser =(values)=>async dispatch=>{
     dispatch({type:'EDIT_POST_LOADING' , payload:true})
 
     try {
-        const response = await axios.post(`${url}/api/users/edit` , values, { headers: {"Access-Control-Allow-Origin":  "*"}})
+        const response = await axios.post(`${url}api/users/edit` , values, { headers: {"Access-Control-Allow-Origin":  "*"}})
         dispatch({type:'EDIT_POST_LOADING' , payload:false})
         message.success('User profile updated successfully')
         localStorage.setItem('user' , JSON.stringify(response.data))
